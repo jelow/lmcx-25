@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Announcements List{% endblock title %}
+{% block content %}
+    <h1>Announcements List</h1>
+    <div class="row">
+        {% for announcement in announcements_list %}
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ announcement.title }}</h5>
+                        <p class="card-text"><small class="text-muted">Date: {{ announcement.date_posted }}</small></p>
+                        <p class="card-text">{{ announcement.content|truncatewords:20 }}</p>
+                        <a href="{% url 'announcements_detail' announcement.id %}" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
