@@ -1,0 +1,48 @@
+:root{
+    --dark-purp:     #8256A3; /*(130, 86, 163)*/
+    --light-purp:    #C1ABD1; /*(193, 171, 209)*/
+    --dark-green:    #77A356; /*(119, 163, 86)*/
+    --light-green:   #DDE8D5; /*(221, 232, 213)*/
+    --dark-brick:    #A35B56; /*(163, 91, 86)*/
+    --dark-teal:     #569EA3; /*(86, 158, 163)*/
+}
+
+.bg-dark-purp {
+    background-color: var(--dark-purp) !important;
+}
+.bg-light-purp {
+    background-color: var(--light-purp) !important;
+}
+.bg-dark-green {
+    background-color: var(--dark-green) !important;
+}
+.bg-light-green {
+    background-color: var(--light-green) !important;
+}
+.bg-dark-brick {
+    background-color: var(--dark-brick) !important;
+}
+.bg-dark-teal {
+    background-color: var(--dark-teal) !important;
+}
+.text-dark-purp {
+    color: var(--dark-purp) !important;
+}
+.text-light-purp {
+    color: var(--light-purp) !important;
+}
+.text-dark-green {
+    color: var(--dark-green) !important;
+}
+.text-light-green {
+    color: var(--light-green) !important;
+}
+.text-dark-brick {
+    color: var(--dark-brick) !important;
+}
+.text-dark-teal {
+    color: var(--dark-teal) !important;
+}
+.btn-dark-purp {
+    
+}

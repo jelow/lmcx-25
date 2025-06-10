@@ -7,7 +7,7 @@
             <div class="col-md-4 mb-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">{{ announcement.title }}</h5>
+                        <h5 class="card-title text-dark-purp">{{ announcement.title }}</h5>
                         <p class="card-text"><small class="text-muted">Date: {{ announcement.date_posted }}</small></p>
                         <p class="card-text">{{ announcement.content|truncatewords:20 }}</p>
                         <a href="{% url 'announcements_detail' announcement.id %}" class="btn btn-primary">View Details</a>
