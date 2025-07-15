@@ -1,48 +1,42 @@
 {% extends "base.html" %}
 {% block title %}LMCX{% endblock title %}
 {% block content %}
-    <div class="row pt-5">
-        <div class="col-lg-4 align-self-center text-center">
-            <span class="h3 text-dark-purp">
-                Welcome to...
-            </span>
-        </div>
-        <div class="col-lg-8">
-            <img src="/static/images/LMCX-big-colour.svg" class="mx-auto d-block" alt="LMCX Logo bar">
-        </div>
+<div class="row pt-5">
+    <div class="col align-center text-center">
+        <span class="h1 text-dark-purp">
+            Join us at our Upcoming Events!
+        </span>
     </div>
-    <div class="row pt-2">
-        <div class="col-lg-4 align-self-center text-center">
-            <span class="h3 text-dark-purp">
-                Join us at our Upcoming Events!
-            </span>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <div id="carouselControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                {% for event in events_list %}
-                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                        <img src="{{ event.main_image }}" class="d-block w-100" alt="{{ event.title }}">
-                        <div class="carousel-caption background-white d-md-block">
-                            <h4 class="mb-3 text-light-green">{{ event.title }}</h4>
-                            <p class="text-light-green">{{ event.date|date:"F j, Y" }}</p>
-                            <p class="text-light-green">{{ event.description|truncatewords:15 }}</p>
-                            <a href="{% url 'event_detail' event.id %}" class="btn btn-purp">Learn More</a>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div id="carouselControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            {% for event in events_list %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <img src="{{ event.main_image }}" class="d-block w-100" alt="{{ event.title }}">
+                    <div class="carousel-caption d-md-block">
+                        <div class="card bg-white bg-opacity-75 w-50 mx-auto">
+                            <div class="card-body p-3">
+                                <h4 class="card-title text-dark-purp mb-2">{{ event.title }}</h4>
+                                <p class="card-text text-dark-purp mb-1">{{ event.date|date:"F j, Y" }}</p>
+                                <p class="card-text text-dark-purp mb-1">{{ event.description|truncatewords:10 }}</p>
+                                <a href="{% url 'event_detail' event.id %}" class="btn btn-purp">Learn More</a>
+                            </div>
                         </div>
                     </div>
-                {% endfor %}
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselControls" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-            </div>
+                </div>
+            {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
         </div>
     </div>
+</div>
 {% endblock content %}
