@@ -1,10 +1,12 @@
 :root{
     --dark-purp:     #8256A3; /*(130, 86, 163)*/
+    --darker-purp:   #654280; /*(101, 66, 128)*/
     --light-purp:    #C1ABD1; /*(193, 171, 209)*/
     --dark-green:    #77A356; /*(119, 163, 86)*/
     --light-green:   #DDE8D5; /*(221, 232, 213)*/
     --dark-brick:    #A35B56; /*(163, 91, 86)*/
     --dark-teal:     #569EA3; /*(86, 158, 163)*/
+    --lmcx-green:    #9BCE7B;
 }
 
 .bg-dark-purp {
@@ -43,6 +45,30 @@
 .text-dark-teal {
     color: var(--dark-teal) !important;
 }
-.btn-dark-purp {
-    
+.nav-link {
+    color: var(--light-green) !important;
 }
+.nav-link:hover {
+    color: var(--lmcx-green) !important;
+}
+.bg-image {
+    background-image: url("/static/images/LMCX-purple-bg-1.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+.btn-purp {
+    background-color: var(--dark-purp) !important;
+    color: var(--light-green) !important;
+    border-color: var(--darker-purp) !important;
+}
+.btn-purp:hover {
+        background-color: var(--darker-purp) !important;
+        color: var(--light-green) !important;
+        border-color: var(--darker-purp) !important;
+    }
+.btn-purp:focus {
+        background-color: var(--darker-purp) !important;
+        color: var(--light-green) !important;
+        border-color: var(--darker-purp) !important;
+    }

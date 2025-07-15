@@ -1,5 +1,5 @@
 {% load static %}
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark-purp">
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark-purp">
     <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'home' %}">
             <img src="{% static 'images/LMCX-square-green.svg' %}" alt="LMCX Logo" width="100" height="100">
@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home' %}"><h3>Home</h3></a>
+                    <a class="nav-link" href="{% url 'about' %}"><h3>About</h3></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dowpdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

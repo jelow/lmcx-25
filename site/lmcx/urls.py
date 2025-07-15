@@ -17,10 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic.base import TemplateView
+from events.views.list_view import EventListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', TemplateView.as_view(template_name='base.html'), name='home'),
+    path('', EventListView.as_view(template_name='home.html'), name='home'),
+    path('about', TemplateView.as_view(template_name='about.html'), name='about'),
     path('events/', include('events.urls')),
     path('announcements/', include('announcements.urls')),
     # All of these urls are placeholders to get the Navbar working.
