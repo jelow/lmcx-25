@@ -6,5 +6,5 @@
     <p><strong>Location:</strong> {{ events.location }}</p>
     <p><strong>Description:</strong> {{ events.description }}</p>
     <a href="{{ events.website }}" class="btn btn-purp" target="_blank">Register</a>
-    <a href="{% url 'events_list' %}" class="btn btn-secondary">Back to Events List</a>
+    <a href="{{ return_url|default:'/events' }}" class="btn btn-secondary">Back to Events List</a>
 {% endblock content %}
