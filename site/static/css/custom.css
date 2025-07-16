@@ -59,7 +59,7 @@
 }
 .btn-purp {
     background-color: var(--dark-purp) !important;
-    color: var(--light-green) !important;
+    color: white !important;
     border-color: var(--darker-purp) !important;
 }
 .btn-purp:hover {
@@ -72,3 +72,14 @@
         color: var(--light-green) !important;
         border-color: var(--darker-purp) !important;
     }
+
+.event-card {
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
+}
+
+.event-card .card-body {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+}
