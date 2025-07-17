@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% block title %}LMCX - Announcements{% endblock title %}
 {% block content %}
-    <h1>{{ announcement.title }}</h1>
-    <p><strong>Date Posted:</strong> {{ announcement.date_posted }}</p>
-    <p><strong>Content:</strong> {{ announcement.content }}</p>
-    <a href="{% url 'announcements_list' %}" class="btn btn-secondary">Back to Announcements List</a>
+    <div class="container-lg">
+        <h1>{{ announcement.title }}</h1>
+        <p><strong>Date Posted:</strong> {{ announcement.date_posted }}</p>
+        <p><strong>Content:</strong> {{ announcement.content }}</p>
+        <a href="{% url 'announcements_list' %}" class="btn btn-secondary">Back to Announcements List</a>
+    </div>
 {% endblock content %}
