@@ -1,10 +1,38 @@
 {% extends "base.html" %}
 {% block title %}LMCX - Events{% endblock title %}
 {% block content %}
-    <h1>{{ events.title }}</h1>
-    <p><strong>Date:</strong> {{ events.date }}</p>
-    <p><strong>Location:</strong> {{ events.location }}</p>
-    <p><strong>Description:</strong> {{ events.description }}</p>
-    <a href="{{ events.website }}" class="btn btn-purp" target="_blank">Register</a>
-    <a href="{{ return_url|default:'/events' }}" class="btn btn-secondary">Back to Events List</a>
+    <div class="container-lg">
+        <div class="row">
+            <div class="col-md-4">
+                <h1>{{ events.title }}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                {% if events.sec_image %}
+                    <img src="{{ events.sec_image.url }}" class="img-fluid mb-3 w-75" alt="{{ events.title }}">
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <p><strong>Date:</strong> {{ events.date|date:"F j, Y" }}</p>
+                <p><strong>Location:</strong> {{ events.location }}</p>
+                <p><strong>Description:</strong> {{ events.description }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 mb-3">
+                <a href="{{ events.website }}" class="btn btn-purp" target="_blank" rel="noopener noreferrer">Register</a>
+                <a href="{{ return_url|default:'/events' }}" class="btn btn-secondary">Back to Events List</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                {% if events.main_image %}
+                    <img src="{{ events.main_image.url }}" class="img-fluid mb-3" alt="{{ events.title }}">
+                {% endif %}
+            </div>
+        </div>
+    </div>
 {% endblock content %}

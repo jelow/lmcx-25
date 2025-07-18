@@ -73,13 +73,20 @@
         border-color: var(--darker-purp) !important;
     }
 
-.event-card {
-    background-size: cover;
-    background-position: center;
-    min-height: 300px;
+
+.carousel-caption-top {
+    top: 10%;
+    bottom: auto;
 }
 
-.event-card .card-body {
-    background-color: rgba(0, 0, 0, 0.5);
-    height: 100%;
+.carousel-card {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .carousel-card {
+        width: 50%;
+    }
 }
