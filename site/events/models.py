@@ -7,16 +7,20 @@ class Events(models.Model):
         ("races", "Lower Mainland Cyclocross Race"),
         ("kiddiecross", "KiddieCross - Kids Cyclocross"),
     ]
-    title = models.CharField(max_length=50)
+    title = models.CharField("Event Name", max_length=50)
     website = models.URLField(max_length=200, blank=True)
     registration_link = models.URLField(max_length=200, blank=True)
-    date = models.DateTimeField()
+    date = models.DateTimeField("Event Date")
     location = models.CharField(max_length=200)
     description = models.TextField()
-    type = models.CharField(max_length=50, choices=EVENT_TYPES, default="races")
-    main_image = models.ImageField(upload_to='static/images/', blank=True, null=True)
-    sec_image = models.ImageField(upload_to='static/images/', blank=True, null=True)
+    type = models.CharField("Event Type", max_length=50, choices=EVENT_TYPES, default="races")
+    main_image = models.ImageField("Main Event Image", upload_to='images/events', blank=True, null=True)
+    sec_image = models.ImageField("Icon Image", upload_to='images/events', blank=True, null=True)
 
     def __str__(self):
         return self.title + " - " + str(self.date.year)
     
+    class Meta:
+        verbose_name = "Event"
+        verbose_name_plural = "Events"
+        ordering = ['-date']
