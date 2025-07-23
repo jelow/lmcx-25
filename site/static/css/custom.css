@@ -1,3 +1,12 @@
+@font-face {
+    font-family: "CodeProBold";
+    src: url("/static/fonts/code_pro_bold.otf") format("opentype"),
+         url("../fonts/code_pro_bold.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root{
     --dark-purp:     #8256A3; /*(130, 86, 163)*/
     --darker-purp:   #654280; /*(101, 66, 128)*/
@@ -8,7 +17,6 @@
     --dark-teal:     #569EA3; /*(86, 158, 163)*/
     --lmcx-green:    #9BCE7B;
 }
-
 .bg-dark-purp {
     background-color: var(--dark-purp) !important;
 }
@@ -51,12 +59,6 @@
 .nav-link:hover {
     color: var(--lmcx-green) !important;
 }
-.bg-image {
-    background-image: url("/static/images/LMCX-purple-bg-1.png");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center top;
-}
 .btn-purp {
     background-color: var(--dark-purp) !important;
     color: white !important;
@@ -66,14 +68,12 @@
         background-color: var(--darker-purp) !important;
         color: var(--light-green) !important;
         border-color: var(--darker-purp) !important;
-    }
+}
 .btn-purp:focus {
         background-color: var(--darker-purp) !important;
         color: var(--light-green) !important;
         border-color: var(--darker-purp) !important;
-    }
-
-
+}
 .carousel-caption-top {
     top: 10%;
     bottom: auto;
@@ -89,4 +89,24 @@
     .carousel-card {
         width: 50%;
     }
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.25); /* Adds a dark circle background to arrow icons */
+    border-radius: 50%;
+    width: 45px !important;  /* Make the icon itself larger */
+    height: 45px !important;
+    background-size: 24px;   /* Size of the arrow inside */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-item {
+    margin-right: 2rem; /* Add space between nav items */
+}
+
+.navbar .nav-link h2 .dropdown-item, h1, h2, h3 {
+    font-family: "CodeProBold", Arial, sans-serif !important;
 }
