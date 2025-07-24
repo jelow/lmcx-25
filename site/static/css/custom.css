@@ -78,19 +78,6 @@
     top: 10%;
     bottom: auto;
 }
-
-.carousel-card {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-    .carousel-card {
-        width: 50%;
-    }
-}
-
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     background-color: rgba(0, 0, 0, 0.25); /* Adds a dark circle background to arrow icons */
@@ -109,4 +96,65 @@
 
 .navbar .nav-link h2 .dropdown-item, h1, h2, h3 {
     font-family: "CodeProBold", Arial, sans-serif !important;
+}
+/* Custom responsive font sizes for footer */
+.footer-text {
+    font-size: 1rem !important; /* fs-6 equivalent for mobile */
+}
+/* Responsive carousel card */
+.carousel-card {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+/* Responsive logo */
+.logo-responsive {
+    width: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Prevent overflow on small containers */
+    height: 40px; /* Default height for medium screens */
+}
+/* Add bottom padding to prevent fixed footer from covering content */
+body {
+    padding-bottom: 120px; /* Adjust based on footer height */
+}
+/* Media queries for larger screens */
+@media (min-width: 811px) {
+    .carousel-card {
+        width: 50%;
+    }
+    .logo-responsive {
+        height: 100px; 
+    }
+    .footer-text {
+        font-size: 1.75rem !important; /* fs-3 equivalent for desktop */
+    }
+    body {
+        padding-bottom: 100px; /* More padding on mobile since footer is taller when stacked */
+    }
+}
+/* Media queries for smaller screens */
+@media (max-width: 576px) {
+    .logo-responsive {
+        height: 50px; /* Adjust the height for smaller screens */
+    }
+    .footer-text {
+    font-size: 1rem !important; /* fs-6 equivalent for mobile */
+}
+}
+
+/* Mobile carousel height adjustment */
+@media (max-width: 810px) {
+    .carousel-mobile-height {
+        min-height: 80vh; /* Make carousel take up more vertical space on mobile */
+    }
+    
+    .carousel-mobile-height .carousel-inner,
+    .carousel-mobile-height .carousel-item {
+        min-height: 80vh;
+    }
+    
+    .carousel-mobile-height .carousel-item img {
+        height: 80vh;
+        object-fit: cover; /* Ensure image covers the area properly */
+    }
 }

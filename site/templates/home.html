@@ -3,11 +3,11 @@
 {% block content %}
 <div class="row">
     <div class="col-lg-12">
-        <div id="carouselControls" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselControls" class="carousel slide carousel-mobile-height" data-bs-ride="carousel">
         <div class="carousel-inner">
             {% for event in events_list %}
                 <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                    <img src="{{ event.main_image.url }}" class="d-block w-100" alt="{{ event.title }}">
+                    <img src="{{ event.main_image.url }}" class="w-100" alt="{{ event.title }}">
                         <div class="carousel-caption d-block carousel-caption-top">
                             <div class="card bg-white bg-opacity-75 carousel-card mx-auto">
                                 <div class="card-body p-3">
