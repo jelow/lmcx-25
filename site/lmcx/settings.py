@@ -94,11 +94,11 @@ WSGI_APPLICATION = 'lmcx.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME', 'lmcx_db'),
-        'USER': os.environ.get('DB_USER', 'lmcx_user'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', 'your_password'),
-        'HOST': os.environ.get('DB_HOST', 'localhost'),
-        'PORT': os.environ.get('DB_PORT', '5432'),
+        'NAME': os.environ.get('PGDATABASE', 'lmcx_db'),
+        'USER': os.environ.get('PGUSER', 'lmcx_user'),
+        'PASSWORD': os.environ.get('PGPASSWORD', 'your_password'),
+        'HOST': os.environ.get('PGHOST', 'localhost'),
+        'PORT': os.environ.get('PGPORT', '5432'),
     }
 }
 
