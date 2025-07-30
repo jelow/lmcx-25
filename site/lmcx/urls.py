@@ -27,11 +27,7 @@ urlpatterns = [
     path('about', TemplateView.as_view(template_name='about.html'), name='about'),
     path('events/', include('events.urls')),
     path('announcements/', include('announcements.urls')),
-    # All of these urls are placeholders to get the Navbar working.
-    path('results/', TemplateView.as_view(template_name='base.html'), name='results'),
-    path('photos/', TemplateView.as_view(template_name='base.html'), name='photos'),
-    path('sponsors/', TemplateView.as_view(template_name='base.html'), name='sponsors'),
-    path('contact/', TemplateView.as_view(template_name='contact.html'), name='contact'),
+    path('photos/', TemplateView.as_view(template_name='photos.html'), name='photos'),
 ]
 
 if settings.DEBUG:

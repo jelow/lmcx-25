@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}LMCX - Photos{% endblock title %}
+{% block content %}
+<div class="row ps-3 pt-3">
+    <div class="col-lg-12">
+        <h1 class="text-dark-purp">LMCX Photos</h1>
+        <p>We have some awesome local photographers who love to capture the spirit of cyclocross racing. Check out their work!</p>
+    </div>
+<div class="row">
+    <div class="col-4">
+        <a href="https://www.filipfunk.com/" target="_blank" rel="noopener noreferrer">
+            <img src="{% static 'images/filipfunkphoto_Logo_Transparent.png' %}" alt="Filip Funk Logo" width="auto" height="200">
+        </a>
+    </div>
+    <div class="col-4">
+    </div>
+    <div class="col-4">
+    </div>
+</div>
+{% endblock %}
