@@ -1,8 +1,8 @@
 {% load static %}
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark-purp">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'home' %}">
-            <img src="{% static 'images/LMCX-square-with-words.svg' %}" alt="LMCX Logo" class="logo-responsive">
+        <a class="navbar-brand me-lg-5 me-0" href="{% url 'home' %}">
+            <img src="{% static 'images/lmcx-nav-logo.svg' %}" alt="LMCX Logo" class="logo-responsive">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -25,9 +25,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'announcements_list' %}"><h2>Announcements</h2></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'results' %}"><h2>Results</h2></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'photos' %}"><h2>Photos</h2></a> 
