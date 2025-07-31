@@ -32,7 +32,8 @@ DEBUG = os.environ.get('DEBUG', 'False').lower() in ('true', '1', 'yes')
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1,lmcx-25-production.up.railway.app').split(',')
 
 # Security settings for production
-SECURE_SSL_REDIRECT = False
+SECURE_SSL_REDIRECT = False #Based on https://docs.djangoproject.com/en/4.1/ref/settings/#secure-ssl-redirect 
+# "Note: If turning this to True causes infinite redirects, it probably means your site is running behind a proxy and can’t tell which requests are secure and which are not.""
 SECURE_HSTS_SECONDS = 31536000 if not DEBUG else 0
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
@@ -40,6 +41,7 @@ SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_BROWSER_XSS_FILTER = True
 SESSION_COOKIE_SECURE = not DEBUG
 CSRF_COOKIE_SECURE = not DEBUG
+CSRF_TRUSTED_ORIGINS = ['https://lmcx-25-production.up.railway.app']
 X_FRAME_OPTIONS = 'DENY'
 
 
