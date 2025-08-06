@@ -20,38 +20,11 @@
 .bg-dark-purp {
     background-color: var(--dark-purp) !important;
 }
-.bg-light-purp {
-    background-color: var(--light-purp) !important;
-}
-.bg-dark-green {
-    background-color: var(--dark-green) !important;
-}
-.bg-light-green {
-    background-color: var(--light-green) !important;
-}
-.bg-dark-brick {
-    background-color: var(--dark-brick) !important;
-}
-.bg-dark-teal {
-    background-color: var(--dark-teal) !important;
-}
 .text-dark-purp {
     color: var(--dark-purp) !important;
 }
-.text-light-purp {
-    color: var(--light-purp) !important;
-}
-.text-dark-green {
-    color: var(--dark-green) !important;
-}
 .text-light-green {
     color: var(--light-green) !important;
-}
-.text-dark-brick {
-    color: var(--dark-brick) !important;
-}
-.text-dark-teal {
-    color: var(--dark-teal) !important;
 }
 .nav-link {
     color: var(--light-green) !important;
@@ -73,6 +46,21 @@
         background-color: var(--darker-purp) !important;
         color: var(--light-green) !important;
         border-color: var(--darker-purp) !important;
+}
+.btn-grn {
+    background-color: var(--lmcx-green) !important;
+    color: white !important;
+    border-color: var(--lmcx-green) !important;
+}
+.btn-grn:hover {
+    background-color: var(--dark-green) !important;
+    color: var(--light-green) !important;
+    border-color: var(--dark-green) !important;
+}
+.btn-grn:focus {
+    background-color: var(--dark-green) !important;
+    color: var(--light-green) !important;
+    border-color: var(--dark-green) !important;
 }
 .carousel-caption-top {
     top: 10%;

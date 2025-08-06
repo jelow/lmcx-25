@@ -23,7 +23,12 @@
         </div>
         <div class="row">
             <div class="col-md-8 mb-3">
-                <a href="{{ events.website }}" class="btn btn-purp" target="_blank" rel="noopener noreferrer">Register</a>
+                {% if events.website %}
+                <a href="{{ events.website }}" class="btn btn-purp me-2" target="_blank" rel="noopener noreferrer">Event Site</a>
+                {% endif %}
+                {% if events.registration_link %}
+                <a href="{{ events.registration_link }}" class="btn btn-grn me-2" target="_blank" rel="noopener noreferrer">Register</a>
+                {% endif %}
                 <a href="{{ return_url|default:'/events' }}" class="btn btn-secondary">Back to Events List</a>
             </div>
         </div>
