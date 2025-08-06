@@ -30,5 +30,5 @@ urlpatterns = [
     path('photos/', TemplateView.as_view(template_name='photos.html'), name='photos'),
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# Serve media files in both development and production
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
