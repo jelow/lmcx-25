@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block title %}LMCX - Events{% endblock title %}
 {% block content %}
+{% load static %}
     <h1 class="ps-3 pt-3 text-dark-purp">Events List</h1>
     <div class="row ps-3">
         {% for event in events_list %}
@@ -8,7 +9,11 @@
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="{{ event.sec_image.url }}" class="img-fluid rounded-start" alt="{{ event.title }}">
+                            {% if event.sec_image %}
+                                <img src="{{ event.sec_image.url }}" class="img-fluid rounded-start" alt="{{ event.title }}">
+                            {% else %}
+                                <img src="{% static 'images/lmcx-square-transparent.png' %}" class="img-fluid rounded-start" alt="Default Logo">
+                            {% endif %}
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
