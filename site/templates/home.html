@@ -20,7 +20,7 @@
                                     <h4 class="card-title text-dark-purp mb-2">{{ event.title }}</h4>
                                     <p class="card-text text-dark-purp mb-1">{{ event.date|date:"F j, Y" }}</p>
                                     <p class="card-text text-dark-purp mb-1">{{ event.description|truncatewords:12 }}</p>
-                                    <a href="{% url 'event_detail' event.id %}" class="btn btn-purp">Learn More</a>
+                                    <a href="{% url 'events:detail' event.id %}" class="btn btn-purp">Learn More</a>
                             </div>
                         </div>
                     </div>

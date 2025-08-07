@@ -17,14 +17,14 @@
                         <h2>Events</h2>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{% url 'events_list_by_type' "wncxp" %}">WNCXP</a></li>
-                        <li><a class="dropdown-item" href="{% url 'events_list_by_type' "clinic" %}">Women+ Clinic</a></li>
-                        <li><a class="dropdown-item" href="{% url 'events_list_by_type' "races" %}">LM Races</a></li>
-                        <li><a class="dropdown-item" href="{% url 'events_list_by_type' "kiddie" %}">Kiddie Cross</a></li>
+                        <li><a class="dropdown-item" href="{% url 'events:list_by_type' "wncxp" %}">WNCXP</a></li>
+                        <li><a class="dropdown-item" href="{% url 'events:list_by_type' "clinic" %}">Women+ Clinic</a></li>
+                        <li><a class="dropdown-item" href="{% url 'events:list_by_type' "races" %}">LM Races</a></li>
+                        <li><a class="dropdown-item" href="{% url 'events:list_by_type' "kiddie" %}">Kiddie Cross</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'announcements_list' %}"><h2>Announcements</h2></a>
+                    <a class="nav-link" href="{% url 'announcements:list' %}"><h2>Announcements</h2></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'photos' %}"><h2>Photos</h2></a> 

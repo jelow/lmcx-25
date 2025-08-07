@@ -25,10 +25,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', EventListView.as_view(template_name='home.html'), name='home'),
     path('about', TemplateView.as_view(template_name='about.html'), name='about'),
-    path('events/', include('events.urls')),
-    path('announcements/', include('announcements.urls')),
+    path('events/', include(('events.urls', 'events'), namespace='events')),
+    path('announcements/', include(('announcements.urls', 'announcements'), namespace='announcements')),
     path('photos/', TemplateView.as_view(template_name='photos.html'), name='photos'),
 ]
+
+# Custom error handlers
+handler404 = 'lmcx.views.custom_404'
+handler500 = 'lmcx.views.custom_500'
 
 # Media files are served by Cloudinary in production
 if settings.DEBUG:
