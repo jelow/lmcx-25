@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Page Not Found - LMCX{% endblock %}
+
+{% block content %}
+<div class="container mt-5 pt-5">
+    <img src="{% static 'images/lmcx-404-background.jpg' %}" alt="404 Not Found" class="img-fluid">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10 text-center">
+            <div class="error-page">
+                <h1 class="display-1 fw-bold text-dark-purp mb-4">404</h1>
+                <h2 class="mb-4">Oops! Looks like we got stuck in the mud</h2>
+                <p class="lead mb-5">
+                    Sorry, but the page you are looking for doesn't exist. 
+                    It might have been moved, deleted, or you entered the wrong URL.
+                </p>
+                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center mb-5">
+                    <a href="{% url 'home' %}" class="btn btn-purp btn-lg">
+                        Go Home
+                    </a>
+                    <a href="{% url 'events:list' %}" class="btn btn-grn btn-lg">
+                        View Events
+                    </a>
+                </div>
+                <div class="mt-5">
+                    <p class="text-muted">
+                        If you think this is an error, please contact us.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
