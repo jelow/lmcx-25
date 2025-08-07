@@ -105,6 +105,48 @@
 body {
     padding-bottom: 120px; /* Adjust based on footer height */
 }
+.error-page h1 {
+    font-size: 8rem;
+    line-height: 1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+.error-page-container {
+    position: relative;
+}
+
+.error-page-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay for better text readability */
+    z-index: 1;
+}
+
+.error-page {
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(2px);
+}
+
+.error-page h1 {
+    font-size: 8rem;
+    line-height: 1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+    .error-page h1 {
+        font-size: 6rem;
+    }
+    
+    .error-page {
+        margin: 1rem;
+        padding: 2rem !important;
+    }
+}
 /* Media queries for larger screens */
 @media (min-width: 811px) {
     .carousel-card {

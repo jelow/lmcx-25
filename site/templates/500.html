@@ -4,31 +4,30 @@
 {% block title %}Server Error - LMCX{% endblock %}
 
 {% block content %}
-<div class="container mt-5 pt-5">
-    <img src="{% static 'images/lmcx-404-background.jpg' %}" alt="404 Not Found" class="img-fluid">
-    <div class="row justify-content-center">
-        <div class="col-lg-8 col-md-10 text-center">
-            <div class="error-page">
-                <h1 class="display-1 fw-bold text-danger mb-4">500</h1>
-                <h2 class="mb-4">Internal Server Error</h2>
-                <p class="lead mb-5">
-                    Sorry, looks like we crashed. 
-                    We're working to fix this issue. Please try again later.
-                </p>
-                
-                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center mb-5">
-                    <a href="{% url 'home' %}" class="btn btn-purp btn-lg">
-                        Go Home
-                    </a>
-                    <button onclick="history.back()" class="btn btn-grn btn-lg">
-                        Go Back
-                    </button>
-                </div>
-
-                <div class="mt-5">
-                    <p class="text-muted">
-                        If this problem persists, please contact us.
+<div class="container-fluid p-0 error-page-container" style="background-image: url('{% static 'images/lmcx-404-background.jpg' %}'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 100vh; display: flex; align-items: center;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10 text-center">
+                <div class="error-page bg-white bg-opacity-90 p-5 rounded shadow-lg">
+                    <h1 class="display-1 fw-bold text-danger mb-4">500</h1>
+                    <h2 class="mb-4">Internal Server Error</h2>
+                    <p class="lead mb-5">
+                        Sorry, looks like we crashed. 
+                        We're working to fix this issue. Please try again later.
                     </p>
+                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center mb-5">
+                        <a href="{% url 'home' %}" class="btn btn-purp btn-lg">
+                        Go Home
+                        </a>
+                        <button onclick="history.back()" class="btn btn-grn btn-lg">
+                        Go Back
+                        </button>
+                    </div>
+                    <div class="mt-5">
+                        <p class="text-muted">
+                            If this problem persists, please contact us.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
