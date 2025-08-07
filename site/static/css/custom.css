@@ -131,12 +131,6 @@ body {
     backdrop-filter: blur(2px);
 }
 
-.error-page h1 {
-    font-size: 8rem;
-    line-height: 1;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
 @media (max-width: 768px) {
     .error-page h1 {
         font-size: 6rem;
