@@ -80,6 +80,20 @@
 
 .nav-item {
     margin-right: 3rem; /* Add space between nav items */
+
+}
+.nav-item:last-child {
+    margin-right: 0; /* Remove margin from the last nav item */
+}
+
+.navbar .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Remove dropdown arrow from Events menu */
+.navbar .dropdown-toggle::after {
+    display: none;
 }
 
 .navbar .nav-link h2 .dropdown-item, h1, h2, h3 {
@@ -103,7 +117,10 @@
 }
 /* Add bottom padding to prevent fixed footer from covering content */
 body {
-    padding-bottom: 120px; /* Adjust based on footer height */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+html {
+    overflow-x: hidden; /* Prevent horizontal scrolling at document level */
 }
 .error-page h1 {
     font-size: 8rem;
@@ -151,9 +168,6 @@ body {
     }
     .footer-text {
         font-size: 1.75rem !important; /* fs-3 equivalent for desktop */
-    }
-    body {
-        padding-bottom: 100px; /* More padding on mobile since footer is taller when stacked */
     }
 }
 /* Media queries for smaller screens */
