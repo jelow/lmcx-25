@@ -8,12 +8,17 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 col-md-10 text-center">
+<<<<<<< HEAD
                 <div class="error-page bg-light bg-opacity-50 p-5 rounded shadow-lg">
+=======
+                <div class="error-page bg-white bg-opacity-90 p-5 rounded shadow-lg">
+>>>>>>> 4771259 (Updates error pages to use background image)
                     <h1 class="display-1 fw-bold text-danger mb-4">500</h1>
                     <h2 class="mb-4">Internal Server Error</h2>
                     <p class="lead mb-5">
                         Sorry, looks like we crashed. 
                         We're working to fix this issue. Please try again later.
+<<<<<<< HEAD
                     </p>
                     <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center mb-5">
                         <a href="{% url 'home' %}" class="btn btn-purp btn-lg">
@@ -27,7 +32,22 @@
                 <div class="mt-5">
                     <p class="text-muted">
                         If this problem persists, please contact us.
+=======
+>>>>>>> 4771259 (Updates error pages to use background image)
                     </p>
+                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center mb-5">
+                        <a href="{% url 'home' %}" class="btn btn-purp btn-lg">
+                        Go Home
+                        </a>
+                        <button onclick="history.back()" class="btn btn-grn btn-lg">
+                        Go Back
+                        </button>
+                    </div>
+                    <div class="mt-5">
+                        <p class="text-muted">
+                            If this problem persists, please contact us.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
