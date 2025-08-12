@@ -5,7 +5,7 @@ class Events(models.Model):
         ("wncxp", "WNCXP - Wednesday Night Cyclocross Practice"),
         ("clinic", "Women+ (FWTNB) Clinic"),
         ("races", "Lower Mainland Cyclocross Race"),
-        ("kiddiecross", "KiddieCross - Kids Cyclocross"),
+        ("kindercross", "KinderCross - Kids Cyclocross"),
     ]
     title = models.CharField("Event Name", max_length=50)
     website = models.URLField(max_length=200, blank=True)
