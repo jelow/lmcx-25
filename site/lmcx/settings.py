@@ -41,7 +41,7 @@ SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_BROWSER_XSS_FILTER = True
 SESSION_COOKIE_SECURE = not DEBUG
 CSRF_COOKIE_SECURE = not DEBUG
-CSRF_TRUSTED_ORIGINS = ['https://lmcx-25-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://lmcx-25-production.up.railway.app', 'https://lmcx.ca']
 X_FRAME_OPTIONS = 'DENY'
 
 
