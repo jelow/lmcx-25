@@ -18,7 +18,7 @@
             <div class="col-md-8">
                 <p><strong>Date:</strong> {{ events.date|date:"F j, Y" }}</p>
                 <p><strong>Location:</strong> {{ events.location }}</p>
-                <p><strong>Description:</strong> {{ events.description }}</p>
+                <p><strong>Description:</strong> {{ events.description|linebreaksbr }}</p>
             </div>
         </div>
         <div class="row">
