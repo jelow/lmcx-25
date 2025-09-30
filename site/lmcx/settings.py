@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'events',
     'announcements',
     'django_bootstrap5',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
@@ -193,3 +194,14 @@ cloudinary.config(
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+TINYMCE_DEFAULT_CONFIG = {
+    "theme": "silver",
+    "height": 500,
+    "menubar": False,
+    "plugins": "advlist,autolink,lists,link,image,charmap,print,preview,anchor,"
+                "searchreplace,visualblocks,code,fullscreen,insertdatetime,media,table,paste,"
+                "code,help,wordcount",
+    "toolbar": "undo redo | formatselect | bold italic | bullist numlist outdent indent | "
+                "link | table | removeformat | help",
+}

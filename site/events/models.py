@@ -1,4 +1,5 @@
 from django.db import models
+from tinymce.models import HTMLField
 
 class Events(models.Model):
     EVENT_TYPES = [
@@ -12,7 +13,7 @@ class Events(models.Model):
     registration_link = models.URLField(max_length=200, blank=True)
     date = models.DateTimeField("Event Date")
     location = models.CharField(max_length=200)
-    description = models.TextField()
+    description = HTMLField("Event Description")
     type = models.CharField("Event Type", max_length=50, choices=EVENT_TYPES, default="races")
     main_image = models.ImageField("Main Event Image", upload_to='images/events', blank=True, null=True)
     sec_image = models.ImageField("Icon Image", upload_to='images/events', blank=True, null=True)
