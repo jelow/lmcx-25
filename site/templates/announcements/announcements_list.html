@@ -2,18 +2,24 @@
 {% block title %}LMCX - Announcements{% endblock title %}
 {% block content %}
     <h1 class="ps-3 pt-3 text-dark-purp">Announcements List</h1>
-    <div class="row ps-3">
-        {% for announcement in announcements_list %}
-            <div class="col-md-4 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ announcement.title }}</h5>
-                        <p class="card-text"><small class="text-muted">Date: {{ announcement.date_posted }}</small></p>
-                        <p class="card-text">{{ announcement.content|truncatewords:20|safe }}</p>
-                        <a href="{% url 'announcements:detail' announcement.id %}" class="btn btn-purp">View Details</a>
-                    </div>
+    {% for announcement in announcements_list %}
+        {% if forloop.first or forloop.counter|add:"-1"|divisibleby:3 %}
+            <div class="row ps-3">
+        {% endif %}
+        
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ announcement.title }}</h5>
+                    <p class="card-text"><small class="text-muted">Date: {{ announcement.date_posted }}</small></p>
+                    <p class="card-text">{{ announcement.content|truncatewords:20|safe }}</p>
+                    <a href="{% url 'announcements:detail' announcement.id %}" class="btn btn-purp">View Details</a>
                 </div>
             </div>
-        {% endfor %}
-    </div>
+        </div>
+        
+        {% if forloop.counter|divisibleby:3 or forloop.last %}
+            </div>
+        {% endif %}
+    {% endfor %}
 {% endblock content %}
