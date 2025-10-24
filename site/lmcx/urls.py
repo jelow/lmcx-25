@@ -28,6 +28,7 @@ urlpatterns = [
     path('events/', include(('events.urls', 'events'), namespace='events')),
     path('announcements/', include(('announcements.urls', 'announcements'), namespace='announcements')),
     path('photos/', TemplateView.as_view(template_name='photos.html'), name='photos'),
+    path('tinymce/', include('tinymce.urls')),
 ]
 
 # Custom error handlers

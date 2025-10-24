@@ -10,7 +10,7 @@ class AnnouncementListView(ListView):
     context_object_name = "announcements_list"
 
     def get_queryset(self) -> QuerySet[Announcement]:
-        return self.model.objects.all().order_by("date_posted")
+        return self.model.objects.all().order_by("-date_posted")
     
     def get_context_data(self, **kwargs) -> Dict:
         context = super().get_context_data(**kwargs)

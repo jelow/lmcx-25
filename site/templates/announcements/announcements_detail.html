@@ -4,7 +4,7 @@
     <div class="container-lg pt-3">
         <h1 class="text-dark-purp">{{ announcement.title }}</h1>
         <p><strong>Date Posted:</strong> {{ announcement.date_posted }}</p>
-        <p><strong>Content:</strong> {{ announcement.content|linebreaksbr }}</p>
+        <p><strong>Content:</strong> {{ announcement.content|safe }}</p>
         <a href="{% url 'announcements:list' %}" class="btn btn-secondary">Back to Announcements List</a>
     </div>
 {% endblock content %}
