@@ -18,7 +18,7 @@
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title mb-2">{{ event.title }}</h5>
-                                <p class="card-text"><small>Date: {{ event.date }}</small></p>
+                                <p class="card-text"><small>Date: {{ event.date|date:"F j, Y" }}</small></p>
                                 <p class="card-text"><small>Location: {{ event.location }}</small></p>
                                 <p class="card-text">{{ event.description|truncatewords:15|safe }}</p>
                                 <a href="{% url 'events:detail' event.id %}?return_to={{ current_url|urlencode }}" class="btn btn-purp">View Details</a>
