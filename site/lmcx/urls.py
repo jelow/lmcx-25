@@ -23,7 +23,7 @@ from events.views.list_view import EventListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', EventListView.as_view(template_name='home.html'), name='home'),
+    path('', EventListView.as_view(template_name='home.html'), {'list': 'Home'}, name='home'),
     path('about', TemplateView.as_view(template_name='about.html'), name='about'),
     path('events/', include(('events.urls', 'events'), namespace='events')),
     path('announcements/', include(('announcements.urls', 'announcements'), namespace='announcements')),
