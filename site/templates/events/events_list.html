@@ -3,35 +3,64 @@
 {% block content %}
 {% load static %}
     <h1 class="ps-3 pt-3 text-dark-purp">Events List</h1>
-    <div class="row ps-3">
-        {% for event in events_list %}
-            <div class="col-md-4 mb-3">
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            {% if event.sec_image %}
-                                <img src="{{ event.sec_image.url }}" class="img-fluid rounded-start" alt="{{ event.title }}">
-                            {% else %}
-                                <img src="{% static 'images/lmcx-square-transparent.png' %}" class="img-fluid rounded-start" alt="Default Logo">
-                            {% endif %}
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title mb-2">{{ event.title }}</h5>
-                                <p class="card-text"><small>Date: {{ event.date|date:"F j, Y" }}</small></p>
-                                <p class="card-text"><small>Location: {{ event.location }}</small></p>
-                                <p class="card-text">{{ event.description|truncatewords:15|safe }}</p>
-                                <a href="{% url 'events:detail' event.id %}?return_to={{ current_url|urlencode }}" class="btn btn-purp">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        {% empty %}
-            <div class="col-md-12">
-                <p class="text-secondary">Sorry, no events of that type are scheduled yet. Check back soon!</p>
-            </div>
-        {% endfor %}
+    <p class="ps-3">Lower Mainland Cyclocross includes CX races, clinics, practices, and a kids' series each fall.</p>
+    <p class="ps-3">Practices are informal, free, and open to everyone from experienced racers to CX-curious first timers. Clinics are tailored towards skills development and increasing confidence on the CX course. </p>
+    <p class="ps-3">Below we've highlighted races that are part of the LMCX series, as well as provincial and partner events that you might want to check out. If you've got little ones, make sure to join us for the KinderCross kids' series! </p>
+    <div class="row p-5">
+        <label for="typeFilter" class="form-label">Filter by Event Type:</label>
+        <select id="typeFilter" class="form-select" style="max-width: 400px;">
+            <option value="">All Types</option>
+            <option value="wncxp">WNCXP - Wednesday Night Cyclocross Practice</option>
+            <option value="clinic">Women+ (FWTNB) Clinic</option>
+            <option value="lmcx_races">Lower Mainland Cyclocross Race</option>
+            <option value="other_races">Other Races</option>
+            <option value="kindercross">KinderCross - Kids Cyclocross</option>
+        </select>
     </div>
+    <div class="row px-5">
+        <div class="table-responsive-md p-0">
+        <table 
+            id="eventsTable"
+            class="table table-hover table-borderless border"
+            style="white-space: nowrap;">
+            <thead class="border">
+                <tr>
+                    <th data-field="title">Event Name</th>
+                    <th data-field="date">Date</th>
+                    <th data-field="type">Event Type</th>
+                    <th data-field="location">Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for event in events_list %}
+                <tr data-type="{{ event.type }}">
+                    <td><a class="text-dark-green no-underline" href="{% url 'events:detail' event.id %}">{{ event.title }}</a></td>
+                    <td>{{ event.date|date:"F j, Y" }}</td>
+                    <td>{{ event.get_type_display }}</td>
+                    <td>{{ event.location }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4" class="text-secondary">Sorry, no events are scheduled yet. Check back soon!</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table> </div>
+    </div>
+
+    <script>
+        document.getElementById('typeFilter').addEventListener('change', function() {
+            const selectedType = this.value;
+            const rows = document.querySelectorAll('#eventsTable tbody tr');
+            
+            rows.forEach(row => {
+                if (selectedType === '' || row.getAttribute('data-type') === selectedType) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    </script>
 {% endblock content %}
                         
