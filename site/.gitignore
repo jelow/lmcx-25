@@ -175,3 +175,7 @@ cython_debug/
 
 #VS Code
 .vscode/
+/../.vscode/
+
+#claude.ai
+CLAUDE.md
