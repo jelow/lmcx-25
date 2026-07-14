@@ -131,12 +131,14 @@
     min-height: 30px; /* Minimum height to ensure readability */
     max-height: 80px; /* Maximum height to prevent it from getting too large */
 }
-/* Add bottom padding to prevent fixed footer from covering content */
 body {
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: clip; /* Prevent horizontal scrolling without breaking position: sticky */
 }
 html {
-    overflow-x: hidden; /* Prevent horizontal scrolling at document level */
+    overflow-x: clip; /* Prevent horizontal scrolling at document level without breaking position: sticky */
+}
+main {
+    padding-bottom: 100px; /* Reserve space for the fixed footer before footer.js measures its exact height */
 }
 .error-page h1 {
     font-size: 8rem;
