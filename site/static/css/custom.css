@@ -220,6 +220,19 @@ main {
     }
 }
 
+/* Fixed-size about page photos */
+.about-photo {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 0.5rem;
+}
+
+@media (min-width: 992px) { /* Bootstrap's lg breakpoint, matches col-lg-* in about.html */
+    .about-photo {
+        max-height: 500px;
+    }
+}
+
 /* Mobile carousel height adjustment */
 @media (max-width: 810px) {
     .carousel-mobile-height {
