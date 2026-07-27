@@ -20,6 +20,12 @@
 .bg-dark-purp {
     background-color: var(--dark-purp) !important;
 }
+.bg-light-purp {
+    background-color: var(--light-purp) !important;
+}
+.bg-light-green {
+    background-color: var(--light-green) !important;
+}
 .text-dark-purp {
     color: var(--dark-purp) !important;
 }
