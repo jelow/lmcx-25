@@ -176,6 +176,10 @@ main {
     color: red;
 }
 
+.no-bullets {
+    list-style-type: none;
+}
+
 @media (max-width: 768px) {
     .error-page h1 {
         font-size: 6rem;
