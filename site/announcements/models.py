@@ -1,6 +1,7 @@
 from django.db import models
 from tinymce.models import HTMLField
 
+
 class Announcement(models.Model):
     title = models.CharField(max_length=200)
     content = HTMLField("Announcement Content")
