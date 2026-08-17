@@ -1,5 +1,6 @@
-from django.views.generic import DetailView
 from announcements.models import Announcement
+from django.views.generic import DetailView
+
 
 class AnnouncementDetailView(DetailView):
     model = Announcement
