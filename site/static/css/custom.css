@@ -231,6 +231,32 @@ main {
     border-radius: 0.5rem;
 }
 
+.partner-logo {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+    margin: 0 auto;
+}
+
+.samsara-logo {
+    display: block;
+    width: 100%;
+    height: 200px;
+    background-color: #000;
+
+    mask: url("/static/images/samsara.svg") center / contain no-repeat;
+    -webkit-mask: url("/static/images/samsara.svg") center / contain no-repeat;
+}
+
+.partner-cell {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 @media (min-width: 992px) { /* Bootstrap's lg breakpoint, matches col-lg-* in about.html */
     .about-photo {
         max-height: 500px;

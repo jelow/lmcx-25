@@ -37,6 +37,11 @@ urlpatterns = [
         include(("announcements.urls", "announcements"), namespace="announcements"),
     ),
     path("photos/", TemplateView.as_view(template_name="photos.html"), name="photos"),
+    path(
+        "partners/",
+        TemplateView.as_view(template_name="partners.html"),
+        name="partners",
+    ),
     path("tinymce/", include("tinymce.urls")),
 ]
 
