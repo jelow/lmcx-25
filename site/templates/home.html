@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load cdn %}
 {% block title %}LMCX{% endblock title %}
 {% block content %}
 {% load static %}
@@ -9,7 +10,7 @@
             {% for event in events_list %}
                 <div class="carousel-item {% if forloop.first %}active{% endif %}">
                     {% if event.main_image %}
-                        <img src="{{ event.main_image.url }}" class="w-100" alt="{{ event.title }}">
+                        <img src="{{ event.main_image.url|optimized }}" class="w-100" alt="{{ event.title }}">
                     {% else %}
                         <img src="{% static 'images/lmcx-default-event-photo.png' %}" class="w-100" alt="Default Event Image">
                     {% endif %}
